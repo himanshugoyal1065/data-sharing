@@ -1,0 +1,3 @@
+--Consumer Config
+1. auto-offset-reset = earliest (as we need to consume everything from the starting)
+2.

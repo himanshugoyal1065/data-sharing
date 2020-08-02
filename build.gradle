@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+group = 'com.himanshu'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	// https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+	compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.4.0'
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2
+	compile group: 'org.apache.commons', name: 'commons-configuration2', version: '2.6'
+// https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils
+	compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.4'
+// https://mvnrepository.com/artifact/uk.co.caprica/vlcj
+	compile group: 'uk.co.caprica', name: 'vlcj', version: '4.0.0'
+
+}
+
+test {
+	useJUnitPlatform()
+}
